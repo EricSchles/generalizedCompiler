@@ -7,9 +7,7 @@ puts "hello world,ruby"
 #!? end
 
 #!? start perl
-print "hello world,perl\n"
+puts "hello world,perl"
 #!? end
 
 #!? start java
-System.out.println("hello world, java");
-#!? end java
