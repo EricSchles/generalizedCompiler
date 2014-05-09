@@ -1,0 +1,46 @@
+from subprocess import call
+from sys import argv
+import os
+
+file_obj =  argv[1]
+
+list_of_code = []
+with open(file_obj,"r") as code:
+    for line in code:
+        line = line.strip("\n")
+        if "#!?" in line and "end" in line:
+            list_of_code.append(lang_obj)
+        if "#!?" in line and "start" in line:
+            lang_obj = []
+        lang_obj.append(line)
+
+
+os.mkdir("tmp")        
+os.chdir("tmp")
+files_to_run = []
+for lang_obj in list_of_code:
+    to_run = []
+    first_line = lang_obj[0]
+    lang = first_line.split("start")[1].lstrip(" ")
+    if lang == "python":
+        lang_file = "tmp.py"
+    if lang == "ruby":
+        lang_file = "tmp.rb"
+    if lang == "perl":
+        lang_file = "tmp.pl"
+    with open(lang_file,"w") as f:
+        for i in xrange(1,len(lang_obj)-1):
+            f.write(lang_obj[i])
+    to_run.append(lang)
+    to_run.append(lang_file)
+    
+    files_to_run.append(to_run)
+
+for i in files_to_run:
+    lang = i[0]
+    lang_file = i[1]
+    call([lang,lang_file])
+    os.remove(lang_file)
+
+os.chdir("../")
+os.rmdir("tmp")

@@ -1,0 +1,11 @@
+#!? start python
+print "hello world, python"
+#!? end 
+
+#!? start ruby
+puts "hello world,ruby"
+#!? end
+
+#!? start perl
+print "hello world,perl"
+#!? end
