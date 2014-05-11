@@ -28,6 +28,7 @@ with open(file_obj,"r") as code:
         line = line.strip("\n")
         if "#!?" in line and "end" in line:
             list_of_code.append(lang_obj)
+            continue
         if "#!?" in line and "start" in line:
             lang_obj = []
         lang_obj.append(line)
@@ -53,14 +54,14 @@ for lang_obj in list_of_code:
     with open(lang_file,"w") as f:
         if lang == "java":
             java_start(f)
-        if lang == "cpp":
-            cpp_start(f)
-        for i in xrange(1,len(lang_obj)-1):
+        # if lang == "cpp":
+        #     cpp_start(f)
+        for i in xrange(1,len(lang_obj)):
             f.write(lang_obj[i])
         if lang == "java":
             java_end(f)
-        if lang == "cpp":
-            cpp_end(f)
+        # if lang == "cpp":
+        #     cpp_end(f)
     to_run.append(lang)
     to_run.append(lang_file)
     
@@ -77,12 +78,12 @@ for i in files_to_run:
         call([lang,lang_file_exe])
         os.remove(lang_file)
         os.remove(lang_file_remove)
-    if lang == "cpp":
-        lang_file_exe = lang_file.split(".")[0]
-        call(["g++","-o",lang_file_exe,lang_file])
-        call(["./",lang_file_exe])
-        os.remove(lang_file)
-        os.remove(lang_file_exe)
+    # elif lang == "cpp":
+    #     lang_file_exe = lang_file.split(".")[0]
+    #     call(["g++","-o",lang_file_exe,lang_file])
+    #     call(["./",lang_file_exe],shell=True)#fix this (shell should not be true)
+    #    os.remove(lang_file)
+    #    os.remove(lang_file_exe)
     else:
         call([lang,lang_file])
         os.remove(lang_file)

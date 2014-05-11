@@ -1,3 +1,9 @@
+NOTE:
+
+You'll need cling installed to run cpp code safely, you can get it here:
+http://root.cern.ch/drupal/content/cling-build-instructions
+
+
 existent converters:
 
 https://code.google.com/a/eclipselabs.org/p/j2c/
@@ -17,20 +23,30 @@ mutilple pass throughs for each file to do optimization and register objects
 
 Syntax:
 
-#!? python
+#!? start python
 
 print "Hello"
 
-#!? java
+#!? end
+
+#!? start java
 
 System.out.println("Hello");
 
-#!? ruby
+#!? end
+#!? start ruby
 
 puts "Hello"
 
-#!? C
+#!? end
+#!? start C
 
 printf("Hello");
 
-etc..
+#!? end
+
+#!? start cpp
+
+cout << "Hello world" << endl;
+
+#!? end

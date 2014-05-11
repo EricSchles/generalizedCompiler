@@ -3,13 +3,13 @@ print "hello world, python"
 #!? end 
 
 #!? start ruby
-puts "hello world,ruby"
+puts "hello world,cody"
 #!? end
 
 #!? start perl
-print "hello world,perl\n"
+print "hello world,cody, again.\n"
 #!? end
 
 #!? start java
-System.out.println("hello world, java");
-#!? end java
+System.out.println("Woah cody, I really like saying hi to you");
+#!? end 
