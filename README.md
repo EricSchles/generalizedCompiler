@@ -1,7 +1,16 @@
-NOTE:
+#Feature Road Map:
 
-You'll need cling installed to run cpp code safely, you can get it here:
-http://root.cern.ch/drupal/content/cling-build-instructions
+Inter object support for lists, dictionaries, and classes
+
+Support for import statements
+
+Abstract Syntax tree Parser for all languages into a common form
+
+Conversion from AST to C++
+
+JIT for C++ code
+
+
 
 
 existent converters:
