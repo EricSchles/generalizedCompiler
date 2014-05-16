@@ -1,15 +1,31 @@
 #!? start python
-print "hello world, python"
+thing = []
+
+for i in xrange(2):
+    print i
+    print i +3
+
 #!? end 
 
 #!? start ruby
-puts "hello world,cody"
+thing.push(5)
+puts "hello world,ruby"
 #!? end
 
 #!? start perl
-print "hello world,cody, again.\n"
+print "hello world, perl.\n"
 #!? end
 
 #!? start java
-System.out.println("Woah cody, I really like saying hi to you");
-#!? end 
+for(int i = 0; i < 10;i++)
+ System.out.println("hello world, java");
+#!? end
+
+#!? start cpp
+cout << "Hello world" << endl;
+#!? end
+
+#!? start python
+print thing
+print "hello, again"
+#!? end
