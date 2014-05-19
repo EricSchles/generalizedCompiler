@@ -3,21 +3,15 @@ from sys import argv
 import core.global_obj as global_obj
 import core.lang_wrappers as wrappers
 import core.execute_code as execute_code
+import core.parser as parser
 import os
 
 
 file_obj =  argv[1]
 
-list_of_code = []
-with open(file_obj,"r") as code:
-    for line in code:
-        line = line.strip("\n") 
-        if "#!?" in line and "end" in line:
-            list_of_code.append(lang_obj)
-            continue
-        if "#!?" in line and "start" in line:
-            lang_obj = []
-        lang_obj.append(line)
+
+list_of_code = parser.parse(file_obj)
+
 
 os.mkdir("tmp")        
 os.chdir("tmp")
