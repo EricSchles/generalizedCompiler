@@ -1,14 +1,19 @@
 #!? start python
 thing = []
-
-for i in xrange(2):
+dicter = {}
+#import requests
+#r = requests.get("http://www.google.com")
+#print r.text
+for i in xrange(10):
     print i
-    print i +3
 
 #!? end 
 
 #!? start ruby
 thing.push(5)
+dicter["hello"] = 5
+puts dicter
+puts thing
 puts "hello world,ruby"
 #!? end
 
@@ -26,6 +31,6 @@ cout << "Hello world" << endl;
 #!? end
 
 #!? start python
-print thing
+
 print "hello, again"
 #!? end
