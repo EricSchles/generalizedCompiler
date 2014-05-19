@@ -3,21 +3,12 @@ from sys import argv
 import core.global_obj as global_obj
 import core.lang_wrappers as wrappers
 import core.execute_code as execute_code
+import core.parser as parser
 import os
-
 
 file_obj =  argv[1]
 
-list_of_code = []
-with open(file_obj,"r") as code:
-    for line in code:
-        line = line.strip("\n") 
-        if "#!?" in line and "end" in line:
-            list_of_code.append(lang_obj)
-            continue
-        if "#!?" in line and "start" in line:
-            lang_obj = []
-        lang_obj.append(line)
+list_of_code = parser.parse(file_obj)
 
 os.mkdir("tmp")        
 os.chdir("tmp")
@@ -42,7 +33,6 @@ for lang_obj in list_of_code:
 
     lang_list = []
     for lang_check,lang_file_check in files_to_run:
-
         lang_list.append(lang_check)
     
     if lang in lang_list:
@@ -61,6 +51,7 @@ for lang_obj in list_of_code:
     with open(lang_file,"w") as f:
         for elem in global_obj.check_for_lists(lang_obj,f):
             lists.append(elem)
+        
         for elem in global_obj.check_for_dicts(lang_obj,f):
             dicts.append(elem)
 
@@ -72,10 +63,11 @@ for lang_obj in list_of_code:
         for obj in lists:
             if lang == "python" or lang == "ruby":
                 f.write(obj + " = []\n")
+            
         for obj in dicts:
             if lang == "python" or lang == "ruby":
                 f.write(obj + " = {}\n")
-
+            
         for i in xrange(1,len(lang_obj)):
             lang_obj[i] += "\n"
             f.write(lang_obj[i])

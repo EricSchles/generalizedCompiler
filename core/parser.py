@@ -1,4 +1,5 @@
 def parse(file_obj):
+    list_of_code = []
     with open(file_obj,"r") as code:
         for line in code:
             line = line.strip("\n") 
