@@ -38,3 +38,16 @@ def check_for_dicts(code,file_obj):
             dict_name = line.split("=")[0].replace(" ","")
             dicts.append(dict_name)
     return dicts
+
+def check_for_primitives(code,file_obj):
+    
+    prims = {}
+    localuuh = locals().copy()
+    for name in localuuh.keys():
+        if not name[0]=='_':
+            value = localuuh[name]
+            if type(value) in [str, int, float]:
+                prims[name] = value
+    return prims
+
+#add stuff from the internet

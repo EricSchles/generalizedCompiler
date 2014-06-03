@@ -7,6 +7,17 @@ import core.execute_code as execute_code
 import core.parser as parser
 import os
 
+def get_var_vals(var_name):
+    import sys
+    calling_frame = sys._getframe().f_back
+    var_val = calling_frame.f_locals.get(var_name, calling_frame.f_globals.get(var_name,None))
+    with open("vars.py","a") as f:
+        f.write(var_name + " = " str(var_val))
+
+def get_var_names():
+    for i in locals():
+        
+
 file_obj =  argv[1]
 
 list_of_code = parser.parse(file_obj)
