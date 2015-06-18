@@ -5,22 +5,22 @@ dicter = {}
 #import requests
 #r = requests.get("http://www.google.com")
 #print r.text
-for i in xrange(10):
+for i in xrange(15):
     print i
 
 #!? end 
 
 #!? start ruby
 
-thing.push(5)
-dicter["hello"] = 5
+thing.push(7)
+dicter["hello"] = 3
 puts dicter
 puts thing
-puts "hello world,ruby"
+puts "hello world,ruby, oh god why am I writing in ruby"
 #!? end
 
 #!? start perl
-print "hello world, perl.\n"
+print "hello world, perl, oh no, this must be a mistake, perl is the devil.\n"
 #!? end
 
 #!? start java
@@ -35,4 +35,5 @@ cout << "Hello world" << endl;
 #!? start python
 
 print "hello, again"
+print "yes I am silly"
 #!? end
